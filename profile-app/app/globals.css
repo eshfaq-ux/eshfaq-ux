@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #050812 0%, #0a0e27 25%, #1a0033 50%, #050812 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(26, 31, 58, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 217, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.glass:hover {
+  background: rgba(26, 31, 58, 0.6);
+  border-color: rgba(0, 217, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+}
+
+/* Cyber glow effect */
+.cyber-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00D9FF, #8000FF, #FF006E);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyber-glow:hover::before {
+  opacity: 0.1;
+}
+
+/* Text gradient */
+.gradient-text {
+  background: linear-gradient(135deg, #00D9FF 0%, #8000FF 50%, #FF006E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(10deg);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 31, 58, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00D9FF, #8000FF);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00D9FF, #FF006E);
+}
+
+/* Selection style */
+::selection {
+  background: rgba(0, 217, 255, 0.3);
+  color: #00D9FF;
+}
+
+/* Link styles */
+a {
+  position: relative;
+  color: #00D9FF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FF006E;
+}
+
+/* Button base */
+button {
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+/* Code block styling */
+code {
+  background: rgba(0, 217, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #00D9FF;
+}
